@@ -16,7 +16,7 @@ namespace RasiMarket
 
             routes.MapRoute(
                 name: "GetProducts",
-                url: "ürünler",
+                url: "urunler",
                 defaults: new { controller = "Home", action = "GetProducts" }
             );
 
