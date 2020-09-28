@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "GetProducts";
+}
+<div class="banner-v1 banner-image-container banner-inner" style="background-image: url(images/about/banner.jpg)">
+    <img src="images/about/banner.jpg" alt="" height="624" width="1920" class="banner-image">
+    <div class="banner-caption-v2">
+        <h1>İletişim</h1>
+    </div>
+</div>
+
+
+<!-- Content Layout -->
+<section class="content-layout content-section">
+    <div class="container">
+        <div class="heading text-center">
+            <h2>Get in touch</h2>
+        </div>
+        <div class="contents">
+            <p class="text-center">Lorem Ipsum is that it has a more-or-less normal distribution of   <span class="text-break"></span>letters, as opposed to using Content here, content here', making it look like readable English. </p>
+
+            <div class="contact-form pad-top-large">
+                <form data-parsley-validate>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <input type="text" placeholder="Your Name" class="form-control input-lg" required name="name">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input type="email" placeholder="Email Address" class="form-control input-lg" required name="email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <input type="text" placeholder="Subject" class="form-control input-lg" required name="subject">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input type="text" placeholder="Phone No" class="form-control input-lg" required name="phoneno">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <textarea class="form-control" rows="5" required placeholder="Message" name="mess"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-primary btn-lg hvr-shutter-out-vertical">Send Message</button>
+                    </div>
+                </form>
+                <div class="alert alert-success col-xs-12 hidden form-messges ">
+                    <p>We will responce as soon as possible.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="map-container row-float">
+    <div class="google-maps" id="map-canvas">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3126.8540004815836!2d27.088541115624622!3d38.39862468379341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbdeadfc3d8b93%3A0x405d44846c091623!2zUmFzxLAgVGVrZWwgJiDDh2VyZXo!5e0!3m2!1str!2str!4v1596912906781!5m2!1str!2str" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="map-info-window">
+                <h2>Rasi Market</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+                <p> <i class="fa fa-map-marker"></i><a target="_blank" href="https://g.page/rasimarket"> Göztepe, Mithatpaşa Cd. No:871/B, 35290  Konak, İzmir</a></p>
+                <p><i class="fa fa-envelope-o"></i><a target="_blank" href="mailto:marketrasi@gmail.com"> marketrasi@gmail.com</a></p>
+                <p><i class="fa fa-mobile"></i> (+90) 536 384 30 00</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- // Content Layout -->

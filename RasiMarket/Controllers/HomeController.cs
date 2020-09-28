@@ -20,11 +20,26 @@ namespace RasiMarket.Controllers
             return View();
         }
 
-        public ActionResult GetProducts()
+        public ActionResult Category(int id)
         {
 
             var products = repo.GetAll();
             return View(products);
+        }
+
+        public ActionResult GetProductDetail(int id)
+        {
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
         }
     }
 }
