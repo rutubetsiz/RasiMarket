@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasiMarket", "RasiMarket\RasiMarket.csproj", "{59B4D6C9-7912-4361-9E58-5F99E3AD58E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasiMarketAdmin", "RasiMarketAdmin\RasiMarketAdmin.csproj", "{897C1DB1-ECA4-4880-82F5-F8CE214332C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasiMarket.Repository", "RasiMarket.Repository\RasiMarket.Repository.csproj", "{EEE15F72-C850-4C40-9221-24338B94C01D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{59B4D6C9-7912-4361-9E58-5F99E3AD58E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59B4D6C9-7912-4361-9E58-5F99E3AD58E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59B4D6C9-7912-4361-9E58-5F99E3AD58E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897C1DB1-ECA4-4880-82F5-F8CE214332C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897C1DB1-ECA4-4880-82F5-F8CE214332C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897C1DB1-ECA4-4880-82F5-F8CE214332C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897C1DB1-ECA4-4880-82F5-F8CE214332C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE15F72-C850-4C40-9221-24338B94C01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE15F72-C850-4C40-9221-24338B94C01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE15F72-C850-4C40-9221-24338B94C01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE15F72-C850-4C40-9221-24338B94C01D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
