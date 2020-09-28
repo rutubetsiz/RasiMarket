@@ -123,7 +123,7 @@ jQuery(window).on('resize', function() {
 .on('load',function(){
 	// Isotope
 	// Product Filter
-	var $container = jQuery('.product-list');
+	var $container = jQuery('.product-list-v1');
 	// initialize isotope
 	$container.isotope({
 	  itemSelector: '.product-grid'

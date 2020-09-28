@@ -159,6 +159,7 @@
     <Content Include="images\about\logo.png" />
     <Content Include="images\banner-text-1.png" />
     <Content Include="images\banner\banner.jpg" />
+    <Content Include="images\banner\rasibanner.jpg" />
     <Content Include="images\blog-single\avatar-1.jpg" />
     <Content Include="images\blog-single\avatar-2.jpg" />
     <Content Include="images\blog-single\avatar-3.jpg" />
@@ -233,6 +234,7 @@
     <Content Include="images\homepage\vegitable-medium-6.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\logo2.png" />
+    <Content Include="images\rasilogo.jpg" />
     <Content Include="images\shop\product-thumb-1-1.jpg" />
     <Content Include="images\shop\product-thumb-1-2.jpg" />
     <Content Include="images\shop\product-thumb-1.jpg" />
@@ -285,7 +287,10 @@
     <Content Include="fonts\iconic.ttf" />
     <Content Include="fonts\iconic.woff" />
     <None Include="packages.config" />
-    <Content Include="Views\Home\GetProducts.cshtml" />
+    <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\Home\GetProductDetail.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
