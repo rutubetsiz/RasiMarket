@@ -1,0 +1,75 @@
+﻿@model RasiMarket.Data.Models.CategoryDetail
+@{
+    ViewBag.Title = "GetProducts";
+}
+<div class="banner-v1 banner-image-container banner-inner" style="background-image: url(images/about/banner.jpg)">
+    <img src="images/about/banner.jpg" alt="" height="624" width="1920" class="banner-image">
+    <div class="banner-caption-v2">
+        <h1>@Model.MainCategoryName </h1>
+    </div>
+</div>
+
+
+<!-- Content Section 6 -->
+<section class="content-section content-6">
+    <div class="container">
+
+        <div class="row heading text-center">
+            <div class="row-float pad-top-large product-list-filter">
+                <div class="col-md-2">
+                    <a href="#" class="btn-block
+    btn btn-outline hvr-back-pulse active" data-filter="*">Tümü</a>
+                </div>
+                @foreach (var item in Model.Subcategories)
+                {
+                    <div class="col-md-2">
+                        <a href="#" class="btn-block
+    btn btn-outline hvr-back-pulse " data-filter=".@RasiMarket.Data.Helper.Helper.GenerateUrl(item.Name)">@item.Name</a>
+</div>
+}
+            </div>
+        </div>
+        <div class="product-list-v1 row pad-top-large">
+
+
+            @foreach (var item in Model.Products)
+            {
+                var className = "";
+                foreach (var x in item.CategoriName.Split(';'))
+                {
+                    className += @RasiMarket.Data.Helper.Helper.GenerateUrl(x.ToString()) + " ";
+                }
+                <div class="column product-grid @className">
+                    <div class="product">
+                        <div class="box-background">
+                            <h3 class="title">@item.Name</h3>
+                            <p class="excerpt">@item.Description</p>
+                            <p class="price">
+                                <span class="amount">@item.Price</span>
+                                <span class="currency">₺</span>
+                                <span class="per">(@item.Unit)</span>
+                            </p>
+                            <div class="buy-options">
+                                <select>
+                                    <option>Quantity</option>
+                                    <option>1 kg</option>
+                                    <option>5 kg</option>
+                                </select>
+                                <select>
+                                    <option>Type</option>
+                                    <option>1 kg</option>
+                                    <option>5 kg</option>
+                                </select>
+                            </div>
+                            <div class="options">
+                                <a href="" class="add-to-wishlist"><i class="fa fa-heart"></i> Add to wish list</a>
+                                <a href="" class="btn btn-primary add-to-cart hvr-shutter-out-vertical btn-with-icon-right">Add to cart <i class="fa fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Content Section 6 // -->

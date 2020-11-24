@@ -1,9 +1,9 @@
-﻿using RasiMarket.Db.Base;
-
-namespace RasiMarket.Models
+﻿
+namespace RasiMarket.Data.Models
 {
-    public class Products : ModelBase
+    public class Products
     {
+        public int ID { get; set; }
         public string BarcodeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -12,7 +12,9 @@ namespace RasiMarket.Models
         public int Stock { get; set; }
         public string ImageUrl { get; set; }
         public string ThumbnailUrl { get; set; }
-        public long ID { get; set; }
         public int? Popularity { get; set; }
+        public string CategoriName { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

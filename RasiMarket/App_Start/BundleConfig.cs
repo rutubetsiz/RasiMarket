@@ -14,8 +14,8 @@ namespace RasiMarket
                         "~/Scripts/vendor/modernizr.js"));
 
             bundles.Add(new StyleBundle("~/Content/maincss").Include(
-                      "~/Content/vendor.css",
-                      "~/Content/style.css"));
+                      "~/Content/style.css",
+                      "~/Content/vendor.css"));
         }
     }
 }

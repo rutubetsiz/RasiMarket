@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasiMarketAdmin", "RasiMark
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasiMarket.Repository", "RasiMarket.Repository\RasiMarket.Repository.csproj", "{EEE15F72-C850-4C40-9221-24338B94C01D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasiMarket.Data", "RasiMarket.Data\RasiMarket.Data.csproj", "{7EDF46E9-9519-4D27-8700-C0613F4BD797}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EEE15F72-C850-4C40-9221-24338B94C01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEE15F72-C850-4C40-9221-24338B94C01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEE15F72-C850-4C40-9221-24338B94C01D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EDF46E9-9519-4D27-8700-C0613F4BD797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EDF46E9-9519-4D27-8700-C0613F4BD797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EDF46E9-9519-4D27-8700-C0613F4BD797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EDF46E9-9519-4D27-8700-C0613F4BD797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

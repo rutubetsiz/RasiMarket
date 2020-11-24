@@ -9,6 +9,10 @@
 
     @Styles.Render("~/Content/maincss")
     @Scripts.Render("~/bundles/modernizr")
+
+    @{
+        var viewModel = ViewBag.LayoutViewModel;
+    }
 </head>
 <body>
     <!--[if lt IE 10]>
@@ -27,8 +31,10 @@
                             <li class="menu-item-has-children">
                                 <a href="">Ürünler</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/acik-cerez-c-4">Açık Çerez</a>
-                                    <li><a href="/icecek-c-1">İçecek</a>
+                                    @foreach (var item in viewModel)
+                                    {
+                                        <li><a href="/@RasiMarket.Data.Helper.Helper.GenerateUrl(item.Name)-c-@item.ID">@item.Name</a></li>
+                                    }
                                 </ul>
                             </li>
                             <li><a href="/hakkimizda">Hakkımızda</a></li>
@@ -37,7 +43,7 @@
                     </nav>
                     <div class="logo">
                         <a href="/">
-                            <img src="images/rasilogo.jpg" height="164" width="164" alt="">
+                            <img src="images/rasilogo.png" height="164" width="164" alt="">
                         </a>
                     </div>
                     <div class="header-top-right-v1">
@@ -65,8 +71,10 @@
                     <li class="menu-item-has-children">
                         <a href="">Ürünler</a>
                         <ul class="sub-menu">
-                            <li><a href="/acik-cerez-c-4">Açık Çerez</a>
-                            <li><a href="/icecek-c-1">İçecek</a>
+                            @foreach (var item in viewModel)
+                            {
+                                <li><a href="/@RasiMarket.Data.Helper.Helper.GenerateUrl(item.Name)-c-@item.ID">@item.Name</a></li>
+                            }
                         </ul>
                     </li>
                     <li><a href="/hakkimizda">Hakkımızda</a></li>
@@ -86,13 +94,13 @@
                         <!--  widget  -->
                         <div class="widget-2">
                             <a href="/">
-                                <img src="images/rasilogo.jpg" height="117" width="117" class="footer-logo">
+                                <img src="images/rasilogo.png" height="117" width="117" class="footer-logo">
                             </a>
                             <p>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry
                             </p>
                             <hr class="hr-1">
-                            
+
                         </div>
                         <!--  widget //  -->
                     </div>

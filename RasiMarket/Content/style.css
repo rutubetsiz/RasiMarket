@@ -257,9 +257,17 @@ th {
     border: 1px solid #ddd !important; } }
 
 @font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url("../fonts/glyphicons-halflings-regular.eot");
-  src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+    font-family: 'Chiller';
+    src: url("../fonts/chiller.eot");
+    src: url("../fonts/chiller.eot?#iefix") format("embedded-opentype"), url("../fonts/chiller.woff2") format("woff2"), url("../fonts/chiller.woff") format("woff"), url("../fonts/chiller.ttf") format("truetype"), url("../fonts/chiller.svg#glyphicons_halflingsregular") format("svg");
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url("../fonts/glyphicons-halflings-regular.eot");
+    src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+}
+
 
 .glyphicon {
   position: relative;
@@ -6311,10 +6319,11 @@ blockquote {
   .banner-v1 .banner-caption-v1 {
     padding-bottom: 30px; }
     .banner-v1 .banner-caption-v1 h1 {
-      font-size: 100px;
-      color: #fff;
-      font-family: "Great Vibes", cursive;
-      text-align: center; }
+        font-size: 250px;
+        color: #fff;
+        font-family: "Chiller", cursive;
+        text-align: center;
+    }
       .banner-v1 .banner-caption-v1 h1 img {
         display: block;
         margin: 0 auto; }
@@ -6323,7 +6332,7 @@ blockquote {
           font-size: 100px; } }
       @media (min-width: 1200px) {
         .banner-v1 .banner-caption-v1 h1 {
-          font-size: 200px; } }
+          font-size: 400px; } }
     .banner-v1 .banner-caption-v1 h2 img {
       display: block;
       max-width: 80%;
@@ -6347,7 +6356,7 @@ blockquote {
         width: 100%; } }
     @media (min-width: 992px) {
       .banner-v1 .banner-caption-v1 {
-        bottom: 15%; } }
+        bottom: 25%; } }
   .banner-v1 .banner-caption-text {
     max-width: 550px;
     float: right; }

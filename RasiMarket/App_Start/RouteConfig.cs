@@ -16,7 +16,7 @@ namespace RasiMarket
             routes.MapRoute(
                 name: "Category",
                 url: "{categoryUrl}-c-{id}",
-                defaults: new { controller = "Home", action = "Category", id = UrlParameter.Optional }
+                defaults: new { controller = "Category", action = "Category", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
