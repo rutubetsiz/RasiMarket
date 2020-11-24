@@ -1,8 +1,334 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    ViewBag.Title = "Rasi Admin Ürünler ";
+    Layout = "../Shared/_Layout.cshtml";
 }
 
-<h2>Product</h2>
 
+<!-- begin:: Content Head -->
+<div class="kt-subheader  kt-grid__item" id="kt_subheader">
+    <div class="kt-container  kt-container--fluid ">
+        <div class="kt-subheader__main">
+            <h3 class="kt-subheader__title">Ürünler</h3>
+            <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+        </div>
+    </div>
+</div>
+<!-- end:: Content Head -->
+
+@{
+    if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+    {
+        <div class="alert alert-danger fade show" role="alert">
+            <div class="alert-icon">
+                <i class="flaticon-warning"></i>
+            </div>
+            <div class="alert-text"> @ViewBag.ErrorMessage </div>
+            <div class="alert-close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                        <i class="la la-close"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    }
+}
+
+
+<!-- begin:: Content -->
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+    <!-- begin:: Content -->
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+        <div class="kt-portlet kt-portlet--mobile">
+            <div class="kt-portlet__head kt-portlet__head--lg">
+                <div class="kt-portlet__head-label">
+                    <span class="kt-portlet__head-icon">
+                        <i class="kt-font-brand flaticon2-line-chart"></i>
+                    </span>
+                    <h3 class="kt-portlet__head-title">
+                        Ürünler
+                    </h3>
+                </div>
+                <div class="kt-portlet__head-toolbar">
+                    <div class="kt-portlet__head-wrapper">
+                        <a href="#" class="btn btn-clean btn-icon-sm">
+                            <i class="la la-long-arrow-left"></i>
+                            Back
+                        </a>
+                        &nbsp;
+                        <button type="button" class="btn btn-brand btn-icon-sm btn-prd-add" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="flaticon2-plus"></i> Add New
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="kt-portlet__body">
+
+                <!--begin: Search Form -->
+                <div class="kt-form kt-form--label-right kt-margin-t-20 kt-margin-b-10">
+                    <div class="row align-items-center">
+                        <div class="col-xl-8 order-2 order-xl-1">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 kt-margin-b-20-tablet-and-mobile">
+                                    <div class="kt-input-icon kt-input-icon--left">
+                                        <input type="text" class="form-control" placeholder="Search..." id="generalSearch">
+                                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                                            <span>
+                                                <i class="la la-search"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-4 order-1 order-xl-2 kt-align-right">
+                            <a href="#" class="btn btn-default kt-hidden">
+                                <i class="la la-cart-plus"></i> New Order
+                            </a>
+                            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg d-xl-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--end: Search Form -->
+
+            </div>
+            <div class="kt-portlet__body kt-portlet__body--fit">
+
+                <!--begin: Datatable -->
+                <div class="kt-datatable" id="api_methods"></div>
+
+                <!--end: Datatable -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- end:: Content -->
+
+
+    <div class="modal fade" id="edit-prd-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-url="@Url.Action("EditProduct", "Product")" aria-hidden="true">
+    </div>
+</div>
+
+<!-- end:: Content -->
+
+
+@section Scritps {
+
+    <script type="text/javascript">
+        "use strict";
+
+
+        var KTDefaultDatatableDemo = function() {
+
+            var loadData = function() {
+
+                var options = {
+                    // datasource definition
+                    data: {
+                        type: 'remote',
+
+                        source: {
+                            read: {
+                                url: '@Url.Action("GetProducts", "Product")',
+                                method: 'GET',
+                                map: function(raw) {
+                                    var dataSet = JSON.parse(raw);
+                                    if (typeof raw.data !== 'undefined') {
+                                        dataSet = raw.data;
+                                    }
+                                    return dataSet;
+                                },
+                            },
+                        },
+                        pageSize: 10,
+                        serverPaging: false,
+                        serverFiltering: false,
+                        serverSorting: false,
+                    },
+
+                    layout: {
+                        scroll: false, // enable/disable datatable scroll both horizontal and vertical when needed.
+                        // height: 450, // datatable's body's fixed height
+                        footer: false, // display/hide footer
+                    },
+
+                    // column sorting
+                    sortable: true,
+
+                    pagination: true,
+
+                    search: {
+                        input: $('#generalSearch'),
+                    },
+                    
+                    // columns definition
+                    columns: [
+                        {
+                            field: 'id',
+                            title: 'Id',
+                            width: 30,
+                            type: 'number',
+                            //template: function (row) {
+                            //    return row.RecordID;
+                            //},
+                        }, {
+                            field: 'barcodeId',
+                            title: 'Barcode',
+                        },
+                        {
+                            field: 'name',
+                            title: 'Name',
+                        },
+                        {
+                            field: 'description',
+                            title: 'Description',
+                            //template: function (row) {
+                            //    return row.Country + ' ' + row.ShipCountry;
+                            //},
+                        }, {
+                            field: 'unit',
+                            title: 'Unit',
+                            //type: 'date',
+                            //format: 'MM/DD/YYYY',
+                        }, {
+                            field: 'price',
+                            title: 'Price',
+                        },
+                        {
+                            field: 'stock',
+                            title: 'Stock',
+                        },
+                        {
+                            field: 'actions',
+                            title: 'Actions',
+                            sortable: false,
+                            width: 110,
+                            overflow: 'visible',
+                            autoHide: false,
+                            template: function(data) {
+                                return '\
+						        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-md btn-prd-edit" data-id="' +
+                                    data.id +
+                                    '" title="Edit details">\
+							        <i class="la la-edit"></i>\
+						        </a>\
+						        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-md btn-prd-delete" data-id="' +
+                                    data.id +
+                                    '"  title="Delete">\
+							        <i class="la la-trash"></i>\
+						        </a>\ ';
+                            },
+                        }
+                    ],
+                };
+
+                var datatable = $('.kt-datatable').KTDatatable(options);
+               
+
+            };
+
+            var eventsCapture = function() {
+                $('.kt-datatable').on('kt-datatable--on-init', function() {
+                    eventsWriter('Datatable init');
+                }).on('kt-datatable--on-layout-updated', function() {
+                    eventsWriter('Layout render updated');
+                    initializeCommand();
+                }).on('kt-datatable--on-ajax-done', function() {
+                    eventsWriter('Ajax data successfully updated');
+                }).on('kt-datatable--on-ajax-fail', function(e, jqXHR) {
+                    eventsWriter('Ajax error');
+                }).on('kt-datatable--on-goto-page', function(e, args) {
+                    eventsWriter('Goto to pagination: ' + args.page);
+                }).on('kt-datatable--on-update-perpage', function(e, args) {
+                    eventsWriter('Update page size: ' + args.perpage);
+                }).on('kt-datatable--on-reloaded', function(e) {
+                    eventsWriter('Datatable reloaded');
+                }).on('kt-datatable--on-check', function(e, args) {
+                    eventsWriter('Checkbox active: ' + args.toString());
+                }).on('kt-datatable--on-uncheck', function(e, args) {
+                    eventsWriter('Checkbox inactive: ' + args.toString());
+                }).on('kt-datatable--on-sort', function(e, args) {
+                    eventsWriter('Datatable sorted by ' + args.field + ' ' + args.sort);
+                });
+            };
+
+            var  eventsWriter = function(string) {
+                console.log(string + '\t\n');
+            };
+
+            return {
+                init: function() {
+                    loadData();
+                    eventsCapture();
+                },
+            };
+        }();
+
+        function initializeCommand() {
+
+            $('.btn-prd-add').on("click",
+                function() {
+                    var url = $('#edit-prd-modal').data('url');
+                    var id = 0;
+                    $.get(url + '/' + id,
+                        function(data) {
+                            $("#edit-prd-modal").html(data);
+                            $("#edit-prd-modal").modal('show');
+                        });
+                });
+
+
+            $('.btn-prd-delete').click(function(e) {
+                var id = $(e.currentTarget).attr('data-id');
+                swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!'
+                }).then(function(result) {
+                    if (result.value) {
+                        $.get("/Product/DeleteProduct" + '/' + id,
+                            function(data) {
+                                $(".kt-datatable").KTDatatable('reload');
+                                swal.fire(
+                                    'Deleted!',
+                                    'Your file has been deleted.',
+                                    'success'
+                                );
+                            }).fail(function(err) {
+                            swal.fire(
+                                'Failed!',
+                                'Error on deleting record.',
+                                'danger'
+                            );
+                        });
+
+                    }
+                });
+            });
+
+            $('.btn-prd-edit').on("click",
+                function() {
+                    var url = $('#edit-prd-modal').data('url');
+                    var id = $(this).attr('data-id');
+                    $.get(url + '/' + id,
+                        function(data) {
+                            $("#edit-prd-modal").html(data);
+                            $("#edit-prd-modal").modal('show');
+                        });
+                });
+        }
+
+
+        jQuery(document).ready(function() {
+            KTDefaultDatatableDemo.init();
+        });
+
+
+    </script>
+}
