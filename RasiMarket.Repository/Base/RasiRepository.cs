@@ -33,7 +33,14 @@ namespace RasiMarket.Repository.Base
                  dbConnection.Delete(new T { ID = id });
             }
         }
-
+        public virtual T Get(int id)
+        {
+            using (var dbConnection = new SqlConnection(_connectionString))
+            {
+                dbConnection.Open();
+                return dbConnection.Get<T>(id);
+            }
+        }
         public virtual List<T> GetAll()
         {
             using (var dbConnection = new SqlConnection(_connectionString))
